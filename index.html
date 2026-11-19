@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NJM — Portfolio</title>
+  <meta name="description" content="Portfolio de NJM — étudiant en Génie Informatique : projets, compétences, parcours et contact.">
+  <meta name="theme-color" content="#0b4f5c">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="NJM — Portfolio">
+  <meta property="og:description" content="Projets, compétences, parcours et contact.">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23127b78'/%3E%3Cstop offset='1' stop-color='%230b4f5c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='Arial,sans-serif' font-weight='800' font-size='22' fill='%23ffb26b'%3ENJM%3C/text%3E%3C/svg%3E">
+  <script>
+    /* Mode « léger » pour téléphones / appareils modestes : moins d'effets, plus de vitesse */
+    (function(){try{var n=navigator,c=n.connection||{};
+    if(matchMedia('(max-width:760px)').matches||(n.hardwareConcurrency||8)<=4||(n.deviceMemory||8)<=4||c.saveData)
+      document.documentElement.classList.add('lite')}catch(e){}})();
+  </script>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+  <div class="decor" id="decor"></div>
+  <div class="glow" id="glow"></div>
+
+  <header class="glass nav">
+    <a class="brand" href="#profil" aria-label="NJM">
+      <svg viewBox="0 0 56 56" role="img" aria-hidden="true">
+        <defs><linearGradient id="njm" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" style="stop-color:var(--text)"/><stop offset="1" style="stop-color:var(--accent)"/>
+        </linearGradient></defs>
+        <rect x="2.5" y="2.5" width="51" height="51" rx="16" fill="none" stroke="url(#njm)" stroke-width="2.5"/>
+        <text x="28" y="34" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-weight="800" font-size="17" letter-spacing="-.5" fill="url(#njm)">NJM</text>
+      </svg>
+    </a>
+    <nav>
+      <a href="#profil" data-i18n="nav_profile"></a>
+      <a href="#services" data-i18n="nav_serv"></a>
+      <a href="#projects" data-i18n="nav_projects"></a>
+      <a href="#programming" data-i18n="nav_prog"></a>
+      <a href="#languages" data-i18n="nav_langs"></a>
+      <a href="#path" data-i18n="nav_path"></a>
+      <a href="#photos" data-i18n="nav_photos"></a>
+      <a href="#graphics" data-i18n="nav_graphics"></a>
+      <a href="#media" data-i18n="nav_media"></a>
+      <a href="#follow" data-i18n="nav_follow"></a>
+      <a href="#contact" data-i18n="nav_contact"></a>
+    </nav>
+    <div class="langs" id="langs">
+      <button type="button" data-lang="fr" title="Français">FR</button>
+      <button type="button" data-lang="en" title="English">EN</button>
+      <button type="button" data-lang="rn" title="Kirundi">RN</button>
+      <button type="button" data-lang="sw" title="Kiswahili">SW</button>
+    </div>
+    <div class="themes" id="themes">
+      <button type="button" data-theme="teal" style="--sw:#0b5d6b" title="Transformative Teal"></button>
+      <button type="button" data-theme="cloud" style="--sw:#f0eee9" title="Cloud Dancer"></button>
+      <button type="button" data-theme="damson" style="--sw:#5b2a5a" title="Damson"></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- PROFIL -->
+    <section id="profil" class="glass hero">
+      <div class="avatar-wrap">
+        <span class="orbit o1"><i></i></span>
+        <span class="orbit o2"><i></i></span>
+        <span class="orbit o3"><i></i></span>
+        <label class="avatar">
+          <img id="avatarImg" alt="Profil">
+          <span class="avatar-hint" data-i18n="avatar_hint"></span>
+          <input type="file" accept="image/*" data-img="avatar" hidden>
+        </label>
+      </div>
+      <div class="hero-text">
+        <p class="tag" data-i18n="tag"></p>
+        <h1 contenteditable="true" data-i18n="name"></h1>
+        <h2 contenteditable="true" data-i18n="role"></h2>
+        <p contenteditable="true" data-i18n="bio"></p>
+        <div class="chips">
+          <span contenteditable="true" data-i18n="chip1"></span>
+          <span contenteditable="true" data-i18n="chip2"></span>
+          <span contenteditable="true" data-i18n="chip3"></span>
+        </div>
+        <div class="cta">
+          <a class="btn" href="#contact" data-i18n="cta_contact"></a>
+          <a class="btn alt" id="cvLink" target="_blank" rel="noopener" hidden></a>
+          <button type="button" class="ico" id="cvEdit" title="✎">✎</button>
+        </div>
+        <div class="counters" id="counters">
+          <div><b data-c="projects">0</b><span data-i18n="cnt_projects"></span></div>
+          <div><b data-c="prog">0</b><span data-i18n="cnt_prog"></span></div>
+          <div><b data-c="langs">0</b><span data-i18n="cnt_langs"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <h3 class="title" data-i18n="serv_title"></h3>
+      <div class="glass gfx-bar">
+        <button type="button" class="btn" id="servAdd" data-i18n="serv_add"></button>
+      </div>
+      <div class="grid3" id="servGrid"></div>
+    </section>
+
+    <!-- PROJETS -->
+    <section id="projects">
+      <h3 class="title" data-i18n="projects_title"></h3>
+      <div class="glass gfx-bar">
+        <button type="button" class="btn" id="addProject" data-i18n="proj_add"></button>
+      </div>
+      <div class="grid3" id="projGrid"></div>
+    </section>
+
+    <!-- LANGAGES DE PROGRAMMATION (statistiques) -->
+    <section id="programming">
+      <h3 class="title" data-i18n="prog_title"></h3>
+      <div class="glass gfx-bar">
+        <button type="button" class="btn alt" id="progEdit"></button>
+        <button type="button" class="btn" id="progAdd" data-i18n="prog_add" hidden></button>
+        <small data-i18n="prog_hint"></small>
+        <div class="viewsw" id="progSw">
+          <button type="button" data-view="ring" title="Cercles">◔</button>
+          <button type="button" data-view="bar" title="Barres">▤</button>
+        </div>
+      </div>
+      <div class="lgrid ring" id="progGrid"></div>
+    </section>
+
+    <!-- LANGUES (statistiques) -->
+    <section id="languages">
+      <h3 class="title" data-i18n="langs_title"></h3>
+      <div class="glass gfx-bar">
+        <button type="button" class="btn alt" id="langEdit"></button>
+        <button type="button" class="btn" id="langAdd" data-i18n="lang_add" hidden></button>
+        <small data-i18n="langs_hint"></small>
+        <div class="viewsw" id="viewSw">
+          <button type="button" data-view="ring" title="Cercles">◔</button>
+          <button type="button" data-view="bar" title="Barres">▤</button>
+        </div>
+      </div>
+      <div class="lgrid ring" id="langGrid"></div>
+    </section>
+
+    <!-- PARCOURS -->
+    <section id="path">
+      <h3 class="title" data-i18n="path_title"></h3>
+      <div class="glass gfx-bar">
+        <button type="button" class="btn" id="pathAdd" data-i18n="path_add"></button>
+      </div>
+      <div class="timeline" id="pathGrid"></div>
+    </section>
+
+    <!-- 3 PHOTOS + DESCRIPTION -->
+    <section id="photos">
+      <h3 class="title" data-i18n="photos_title"></h3>
+      <div class="grid3">
+        <figure class="glass card">
+          <label class="slot">
+            <img alt="" data-slot="photo1">
+            <span class="slot-hint" data-i18n="add_photo"></span>
+            <input type="file" accept="image/*" data-img="photo1" hidden>
+            <button type="button" class="zoom">⤢</button>
+          </label>
+          <figcaption>
+            <h4 contenteditable="true" data-i18n="p1t"></h4>
+            <p contenteditable="true" data-i18n="p1d"></p>
+          </figcaption>
+        </figure>
+        <figure class="glass card">
+          <label class="slot">
+            <img alt="" data-slot="photo2">
+            <span class="slot-hint" data-i18n="add_photo"></span>
+            <input type="file" accept="image/*" data-img="photo2" hidden>
+            <button type="button" class="zoom">⤢</button>
+          </label>
+          <figcaption>
+            <h4 contenteditable="true" data-i18n="p2t"></h4>
+            <p contenteditable="true" data-i18n="p2d"></p>
+          </figcaption>
+        </figure>
+        <figure class="glass card">
+          <label class="slot">
+            <img alt="" data-slot="photo3">
+            <span class="slot-hint" data-i18n="add_photo"></span>
+            <input type="file" accept="image/*" data-img="photo3" hidden>
+            <button type="button" class="zoom">⤢</button>
+          </label>
+          <figcaption>
+            <h4 contenteditable="true" data-i18n="p3t"></h4>
+            <p contenteditable="true" data-i18n="p3d"></p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- GRAPHICS -->
+    <section id="graphics">
+      <h3 class="title" data-i18n="gfx_title"></h3>
+      <div class="glass gfx-bar">
+        <label class="btn"><span data-i18n="gfx_add"></span>
+          <input type="file" accept="image/*" id="gfxInput" multiple hidden>
+        </label>
+        <small data-i18n="gfx_hint"></small>
+      </div>
+      <div class="gfx-grid" id="gfxGrid"></div>
+    </section>
+
+    <!-- AUDIO & VIDEO -->
+    <section id="media">
+      <h3 class="title" data-i18n="media_title"></h3>
+      <div class="glass gfx-bar">
+        <label class="btn"><span data-i18n="media_add_file"></span>
+          <input type="file" accept="audio/*,video/*" id="mediaInput" multiple hidden>
+        </label>
+        <button type="button" class="btn alt" id="mediaLink" data-i18n="media_add_link"></button>
+        <small data-i18n="media_hint"></small>
+      </div>
+      <div class="grid3" id="mediaGrid"></div>
+    </section>
+
+    <!-- FOLLOW ME -->
+    <section id="follow" class="glass follow">
+      <h3 class="title" data-i18n="follow_title"></h3>
+      <p class="muted" data-i18n="follow_hint"></p>
+      <div class="socials" id="socials"></div>
+      <button type="button" class="btn ghost" id="editSocials"></button>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="glass contact">
+      <h3 class="title" data-i18n="contact_title"></h3>
+      <div class="cwrap">
+        <div class="cinfo">
+          <p class="mailrow"><i class="fa-solid fa-envelope"></i> <a id="mailLink" target="_blank" rel="noopener"><span id="mailText"></span></a> <button type="button" class="ico" id="mailEdit" title="✎">✎</button></p>
+          <p contenteditable="true" data-i18n="tel"></p>
+          <p contenteditable="true" data-i18n="loc"></p>
+          <div class="cactions">
+            <a class="btn alt" id="waLink" target="_blank" rel="noopener" hidden><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <button type="button" class="ico" id="waEdit" title="✎">✎</button>
+          </div>
+        </div>
+        <form class="cform" id="cform">
+          <input id="cfName" type="text" required maxlength="80" autocomplete="name" data-ph="form_name">
+          <textarea id="cfMsg" required maxlength="1500" rows="4" data-ph="form_msg"></textarea>
+          <button type="submit" class="btn" data-i18n="form_send"></button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">© <span id="year"></span> — <span contenteditable="true" data-i18n="foot"></span> <button type="button" id="ownerBtn" class="lockbtn" title="Admin">🔒</button></footer>
+
+  <div class="glass ownerbar" id="ownerBar" hidden>
+    <b data-i18n="owner_mode"></b>
+    <button type="button" class="btn sm" id="exportBtn" data-i18n="owner_export"></button>
+    <button type="button" class="btn sm alt" id="pwBtn" data-i18n="owner_changepw"></button>
+    <button type="button" class="btn sm alt" id="lockBtn" data-i18n="owner_lock"></button>
+  </div>
+
+  <div class="lightbox" id="lightbox"><img alt=""></div>
+  <script src="content.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
