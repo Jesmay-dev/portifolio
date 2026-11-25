@@ -20,11 +20,11 @@ const SOCIALS = [
 /* Votre adresse email (visible par TOUS les visiteurs). Exemple :
    const CONTACT_EMAIL = 'votre.nom@gmail.com';
    Sinon, utilisez le bouton ✎ à côté de l'email dans la section Contact. */
-const CONTACT_EMAIL = 'nihorimberejesusmarie5@gmail.com';
+const CONTACT_EMAIL = '';
 /* Votre CV (ex : 'cv.pdf' placé à côté de index.html) et votre numéro WhatsApp
    avec l'indicatif du pays, sans « + » (ex : '25779000000'). Ou utilisez les boutons ✎. */
 const CV_URL = '';
-const WHATSAPP = '+25765899834';
+const WHATSAPP = '';
 
 /* =========================================================
    2) TRADUCTIONS — FR / EN / RN (Kirundi) / SW (Swahili)
